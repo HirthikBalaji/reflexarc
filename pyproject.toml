@@ -1,0 +1,35 @@
+[project]
+name = "reflexarc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=1.11.0",
+    "fastapi>=0.142.2",
+    "httpx>=0.28.1",
+    "laya>=0.3.26",
+    "numpy>=2.5.3",
+    "pydantic>=2.13.5",
+    "scikit-learn>=1.9.1",
+    "typesafe-sdk>=0.7.2",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+reflexarc = "reflexarc:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.16.10",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+
